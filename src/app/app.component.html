@@ -1,0 +1,21 @@
+<mat-card>
+  <div class="group">
+    <h1>Time: <span>{{ time$ | async | time }}</span></h1>
+  </div>
+
+  <div class="group group-cycle">
+    <button mat-icon-button aria-label="Example icon-button with a heart icon" [disabled]="running$|async" (click)="addCycle()">
+      <mat-icon>add</mat-icon>
+    </button>
+    <h3>Cycle: <span>{{ numberOfCycle }}</span></h3>
+    <button mat-icon-button aria-label="Example icon-button with a heart icon" [disabled]="running$|async" (click)="removeCycle()">
+      <mat-icon>remove</mat-icon>
+    </button>
+  </div>
+
+  <div class="group">
+    <button mat-stroked-button color="accent" (click)="start()">Start</button>
+    <button mat-stroked-button color="warn" (click)="stop()">Stop</button>
+    <button mat-stroked-button (click)="reset()">Reset</button>
+  </div>
+</mat-card>
